@@ -19,11 +19,6 @@ export function Navbar() {
               </Link>
             </li>
             <li>
-              <Link to="/hellu" activeClassName="active">
-                Works
-              </Link>
-            </li>
-            <li>
               <Link to="/about" activeClassName="active">
                 About
               </Link>
