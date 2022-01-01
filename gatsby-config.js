@@ -2,8 +2,6 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
-const linkResolver = require('./linkresolver.js');
-
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://leleupaisaje.com',
@@ -16,7 +14,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: `${GOOGLE_ANALYTICS_TRACKING_ID}`,
+        trackingId: `${process.env.GOOGLE_ANALYTICS_TRACKING_ID}`,
       },
     },
     'gatsby-plugin-image',
