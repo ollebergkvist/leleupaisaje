@@ -1,13 +1,3 @@
-nav > ul,
-.social-links > ul {
-  list-style-type: none;
-}
-
-nav > li {
-  text-decoration: none;
-  float: left;
-}
-
 ul,
 ul li {
   display: inline-block;

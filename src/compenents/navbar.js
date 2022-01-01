@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-import { header } from '../styles/modules/header.module.css';
+import * as headerStyles from '../styles/modules/header.module.css';
 
 export function Navbar() {
   return (
     <div class="header">
-      <header className={header}>
+      <header className={headerStyles}>
         <nav>
           <ul>
             <li>
-              <Link to="/" activeClassName="active">
+              <Link to="/" className={headerStyles} activeClassName="active">
                 Home
               </Link>
             </li>
