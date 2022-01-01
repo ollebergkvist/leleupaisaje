@@ -3,7 +3,6 @@ import * as React from 'react';
 export function SocialLinks() {
   return (
     <div class="social-links">
-      {' '}
       <ul>
         <li>
           <a href="https://www.facebook.com">Facebook</a>

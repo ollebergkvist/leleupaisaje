@@ -6,8 +6,8 @@ export default function AboutPage({ data }) {
   return (
     <>
       <Seo
-        title="Leleu Paisaje | About"
-        description="More information about our company."
+        title="Leleu Paisaje | Projects"
+        description="More information about our projects."
       />
       <Layout></Layout>
     </>

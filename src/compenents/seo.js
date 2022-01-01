@@ -41,7 +41,6 @@ export function Seo(props) {
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
       {image && <meta name="twitter:image" content={image} />}
-      {/* <link rel="icon" type="image/png" href="favicon.ico" sizes="16x16" /> */}
     </Helmet>
   );
 }

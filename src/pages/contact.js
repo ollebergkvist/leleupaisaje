@@ -6,8 +6,8 @@ export default function AboutPage() {
   return (
     <>
       <Seo
-        title="Leleu Paisaje | Contact us"
-        description="How to get in touch with us"
+        title="Leleu Paisaje | Contact"
+        description="How to get in touch with us."
       />
       <Layout>
         <h1>Contact</h1>

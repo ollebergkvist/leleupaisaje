@@ -1,17 +1,12 @@
 import * as React from 'react';
 import { Seo } from '../compenents/seo.js';
 import { Layout } from '../compenents/layout.js';
-import { StaticImage } from 'gatsby-plugin-image';
 import { imageWrapper } from '../styles/modules/index.module.css';
-import { graphql } from 'gatsby';
 
 export default function IndexPage(props) {
   return (
     <>
-      <Seo
-        title="Leleu Paisaje | About this site"
-        description="More information about this site."
-      />
+      <Seo title="Leleu Paisaje | Home" description="Homepage." />
       <Layout>
         <section>
           <h1>Home</h1>
