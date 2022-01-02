@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Seo } from '../compenents/seo.js';
 import { Layout } from '../compenents/layout.js';
-import { imageWrapper } from '../styles/modules/images.module.css';
 import { graphql, useStaticQuery } from 'gatsby';
 
 export default function IndexPage() {
@@ -22,8 +21,8 @@ export default function IndexPage() {
             <Seo title="Leleu Paisaje | Home" description="Homepage." />
             <Layout>
                 <section>
-                    <h1>Home</h1>
-                    <div className={imageWrapper}>
+                    <h1>{title}</h1>
+                    <div className="test">
                         {/* <StaticImage
               src="../images/ivana-la-61jg6zviI7I-unsplash.jpg"
               alt="dog"

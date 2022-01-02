@@ -1,6 +1,6 @@
 require('dotenv').config({
     path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
     siteMetadata: {
@@ -24,8 +24,10 @@ module.exports = {
         {
             resolve: 'gatsby-source-filesystem',
             options: {
+                name: 'social-icons',
+                path: `${__dirname}/static/social-icons`,
                 name: 'images',
-                path: `${__dirname}/src/images`,
+                path: `${__dirname}/static/images`,
             },
             __key: 'images',
         },
@@ -51,4 +53,4 @@ module.exports = {
             },
         },
     ],
-}
+};

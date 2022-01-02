@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 import * as navbarStyles from '../styles/modules/navbar.module.css';
+import { SocialIcons } from './social-icons';
 
 export function Navbar() {
     return (
@@ -39,6 +40,7 @@ export function Navbar() {
                         </li>
                     </ul>
                 </nav>
+                <SocialIcons />
             </header>
         </div>
     );
