@@ -25,18 +25,16 @@ export function SocialLinks() {
     } = query.contentfulSocialLinks;
 
     return (
-        <div class="social-links">
-            <ul>
-                <li>
-                    <a href={facebookUrl}>{facebookLabel}</a>
-                </li>
-                <li>
-                    <a href={instagramUrl}>{instagramLabel}</a>
-                </li>
-                <li>
-                    <a href={linkedinUrl}>{linkedinLabel}</a>
-                </li>
-            </ul>
-        </div>
+        <ul>
+            <li>
+                <a href={facebookUrl}>{facebookLabel}</a>
+            </li>
+            <li>
+                <a href={instagramUrl}>{instagramLabel}</a>
+            </li>
+            <li>
+                <a href={linkedinUrl}>{linkedinLabel}</a>
+            </li>
+        </ul>
     );
 }

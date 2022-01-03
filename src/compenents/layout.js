@@ -10,8 +10,8 @@ import { content } from '../styles/modules/layout.module.css';
 export function Layout({ children }) {
     return (
         <>
-            <div class="container">
-                <div class="row">
+            <div className="container">
+                <div className="row">
                     <Navbar />
                     <main className={content}>{children}</main>
                     <Footer />

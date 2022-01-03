@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
+import { navMenu } from '../styles/modules/social-icons.module.css';
 
 export function SocialIcons() {
     const query = useStaticQuery(graphql`
@@ -17,8 +18,8 @@ export function SocialIcons() {
         query.contentfulSocialLinks;
 
     return (
-        <div class="social-links">
-            <ul>
+        <div>
+            <ul className={navMenu}>
                 <li>
                     <a href={facebookUrl}>
                         <StaticImage

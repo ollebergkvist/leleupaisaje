@@ -5,16 +5,12 @@ import { SocialIcons } from './social-icons';
 
 export function Navbar() {
     return (
-        <div class="header">
+        <div className="header">
             <header>
                 <nav className={navbarStyles}>
                     <ul>
                         <li>
-                            <Link
-                                to="/"
-                                className={navbarStyles}
-                                activeClassName="active"
-                            >
+                            <Link to="/" activeClassName="active">
                                 Home
                             </Link>
                         </li>

@@ -7,12 +7,20 @@ export const query = graphql`
     query ContactPageQuery {
         contentfulContact {
             title
+            address
+            zip
+            country
+            state
+            city
+            email
+            phone
         }
     }
 `;
 
 export default function AboutPage(props) {
-    const { title } = props.data.contentfulContact;
+    const { title, address, zip, country, state, city, email, phone } =
+        props.data.contentfulContact;
 
     return (
         <>
@@ -38,6 +46,19 @@ export default function AboutPage(props) {
                         </label>
                         <button type="submit">Send</button>
                     </form>
+                </section>
+                <section>
+                    <address>
+                        <a href={`mailto:${email}`}>{email}</a>
+                        <a href={`tel:${[phone]}`}>{phone}</a>
+                        <ul>
+                            <li>{address}</li>
+                            <li>{zip}</li>
+                            <li>{city}</li>
+                            <li>{state}</li>
+                            <li>{country}</li>
+                        </ul>
+                    </address>
                 </section>
             </Layout>
         </>
