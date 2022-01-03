@@ -17,7 +17,7 @@ export function SocialIcons() {
         query.contentfulSocialLinks;
 
     return (
-        <div class="social-links">
+        <div className="social-links">
             <ul>
                 <li>
                     <a href={facebookUrl}>
@@ -28,7 +28,7 @@ export function SocialIcons() {
                             width={16}
                             placeholder="dominantColor"
                             layout="fixed"
-                            fadeIn={false}
+                            // fadeIn={false}
                             loading="eager"
                         />
                     </a>
@@ -42,7 +42,7 @@ export function SocialIcons() {
                             width={16}
                             placeholder="dominantColor"
                             layout="fixed"
-                            fadeIn={false}
+                            // fadeIn={false}
                             loading="eager"
                         />
                     </a>
@@ -56,7 +56,7 @@ export function SocialIcons() {
                             width={16}
                             placeholder="dominantColor"
                             layout="fixed"
-                            fadeIn={false}
+                            // fadeIn={false}
                             loading="eager"
                         />
                     </a>

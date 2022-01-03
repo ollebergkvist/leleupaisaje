@@ -13,17 +13,19 @@ export const query = graphql`
             content {
                 raw
             }
+            status
             architect
-            landscapeArchitect
             type
-            year
-            squareMeters
-            executionDate
+            projectYear
+            projectArea
             client
             clientDescription {
                 clientDescription
             }
             clientWebsiteUrl
+            partners
+            publishedDate
+            location
         }
     }
 `;

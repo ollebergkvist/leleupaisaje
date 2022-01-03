@@ -6,7 +6,7 @@ import { Language } from './language';
 
 export function Navbar() {
     return (
-        <div class="header">
+        <div className="header">
             <header>
                 <nav className={navbarStyles}>
                     <ul>

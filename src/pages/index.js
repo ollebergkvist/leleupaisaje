@@ -4,18 +4,18 @@ import { Layout } from '../compenents/layout.js';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Language } from '../compenents/language.js';
 
-export default function IndexPage() {
-    const query = useStaticQuery(graphql`
-        query HomePageQuery {
-            allContentfulHome {
-                nodes {
-                    title
-                }
+export const query = graphql`
+    query PageQuery($locale: String) {
+        allContentfulHome(filter: { node_locale: { eq: $locale } }) {
+            nodes {
+                title
             }
         }
-    `);
+    }
+`;
 
-    const { title } = query.allContentfulHome.nodes[0];
+export default function IndexPage({ data }) {
+    const { title } = data.allContentfulHome.nodes[0];
 
     return (
         <>

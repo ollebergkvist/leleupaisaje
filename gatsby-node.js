@@ -22,20 +22,15 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 //     );
 // };
 
-// exports.onCreatePage = ({ page, actions }) => {
-//     const { createPage, deletePage } = actions;
-
-//     if (!page.context.locale) {
-//         const language = page.context.language;
-//         const locale = language === 'en' ? 'en-US' : language;
-//         deletePage(page);
-
-//         createPage({
-//             ...page,
-//             context: {
-//                 ...page.context,
-//                 locale,
-//             },
-//         });
-//     }
-// };
+exports.onCreatePage = ({ page, actions }) => {
+    const { createPage, deletePage } = actions;
+    deletePage(page);
+    // You can access the variable "locale" in your page queries now
+    createPage({
+        ...page,
+        context: {
+            ...page.context,
+            locale: page.context.intl.language,
+        },
+    });
+};

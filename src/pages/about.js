@@ -27,8 +27,8 @@ export const query = graphql`
     }
 `;
 
-export default function AboutPage(props) {
-    const { title, seoDescription, content } = props.data.contentfulAbout;
+export default function AboutPage({ data }) {
+    const { title, seoDescription, content } = data.contentfulAbout;
 
     return (
         <>
