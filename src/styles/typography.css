@@ -1,9 +1,10 @@
 html,
 body {
-    color: var(--black);
-    font-family: 'Open Sans';
-    font-size: var(--text-size-base);
-    line-height: 1.4;
+  color: var(--black);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-size: var(--text-size-base);
+  line-height: 1.4;
 }
 
 h1,
@@ -12,9 +13,9 @@ h3,
 h4,
 h5,
 h6 {
-    color: var(--black);
+  color: var(--black);
 }
 
 a {
-    color: var(--black);
+  color: var(--black);
 }

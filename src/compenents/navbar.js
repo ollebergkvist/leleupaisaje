@@ -2,15 +2,20 @@ import * as React from 'react';
 import { Link } from 'gatsby';
 import * as navbarStyles from '../styles/modules/navbar.module.css';
 import { SocialIcons } from './social-icons';
+import { Language } from './language';
 
 export function Navbar() {
     return (
-        <div className="header">
+        <div class="header">
             <header>
                 <nav className={navbarStyles}>
                     <ul>
                         <li>
-                            <Link to="/" activeClassName="active">
+                            <Link
+                                to="/"
+                                className={navbarStyles}
+                                activeClassName="active"
+                            >
                                 Home
                             </Link>
                         </li>

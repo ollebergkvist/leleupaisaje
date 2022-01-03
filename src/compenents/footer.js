@@ -3,12 +3,12 @@ import { SocialLinks } from './social';
 
 export function Footer() {
     return (
-        <div className="footer">
+        <div class="footer">
             <footer>
-                <div className="col">
+                <div class="col">
                     <SocialLinks />
                 </div>
-                <div className="col">
+                <div class="col">
                     Developed with love by{' '}
                     <a href="https://www.ollebergkvist.com">Olle Bergkvist</a>.
                     Copyright:

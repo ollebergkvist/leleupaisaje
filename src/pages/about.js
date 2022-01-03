@@ -13,15 +13,15 @@ export const query = graphql`
             }
             content {
                 raw
-                references {
-                    ... on ContentfulAsset {
-                        contentful_id
-                        gatsbyImageData(
-                            layout: FULL_WIDTH
-                            placeholder: BLURRED
-                        )
-                    }
-                }
+                # references {
+                #     ... on ContentfulAsset {
+                #         contentful_id
+                #         gatsbyImageData(
+                #             layout: FULL_WIDTH
+                #             placeholder: BLURRED
+                #         )
+                #     }
+                # }
             }
         }
     }
