@@ -25,7 +25,7 @@ export function SocialLinks() {
     } = query.contentfulSocialLinks;
 
     return (
-        <div Name="social-links">
+        <div className="social-links">
             <ul>
                 <li>
                     <a href={facebookUrl}>{facebookLabel}</a>

@@ -3,6 +3,7 @@ import { Layout } from '../../compenents/layout';
 import { Seo } from '../../compenents/seo';
 import { graphql } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 export const query = graphql`
     query ProjectQuery($id: String) {
@@ -15,15 +16,12 @@ export const query = graphql`
                 raw
             }
             featuredImage {
+                gatsbyImageData(layout: FULL_WIDTH)
                 description
-                file {
-                    url
-                }
             }
             gallery {
-                file {
-                    url
-                }
+                gatsbyImageData(layout: CONSTRAINED)
+                description
             }
             client
             clientDescription {
@@ -41,13 +39,15 @@ export const query = graphql`
     }
 `;
 
-export default function ContentfulProjects(props) {
+export default function ContentfulProjects({ data }) {
     const {
         title,
         slug,
         seoDescription,
         content,
         client,
+        featuredImage,
+        gallery,
         clientDescription,
         clientWebsiteUrl,
         type,
@@ -57,31 +57,58 @@ export default function ContentfulProjects(props) {
         projectArea,
         collaborators,
         publishedDate,
-    } = props.data.contentfulProject;
+    } = data.contentfulProject;
+
+    const projectFeaturedImage = getImage(featuredImage);
 
     return (
         <>
             <Seo title={title} description={seoDescription} url={slug} />
             <Layout>
                 <h1>{title}</h1>
+                <div>
+                    <GatsbyImage
+                        image={projectFeaturedImage}
+                        alt={featuredImage.description}
+                    />
+                </div>
                 <section>
                     {documentToReactComponents(JSON.parse(content.raw))}
                 </section>
                 <section>
-                    <span>{client}</span>
-                    <span>{clientDescription.clientDescription}</span>
-                    <span>{clientWebsiteUrl}</span>
+                    <p>{client}</p>
+                    <p>{clientDescription.clientDescription}</p>
+                    <p>{clientWebsiteUrl}</p>
                 </section>
                 <section>
-                    <span>{client}</span>
-                    <span>{clientWebsiteUrl}</span>
-                    <span>{type}</span>
-                    <span>{location}</span>
-                    <span>{status}</span>
-                    <span>{projectYear}</span>
-                    <span>{projectArea}</span>
-                    <span>{collaborators}</span>
-                    <span>{publishedDate}</span>
+                    <p>{client}</p>
+                    <p>{clientWebsiteUrl}</p>
+                    <p>{type}</p>
+                    <p>{location}</p>
+                    <p>{status}</p>
+                    <p>{projectYear}</p>
+                    <p>{projectArea}</p>
+                    <p>{collaborators}</p>
+                    <p>{publishedDate}</p>
+                </section>
+                <section>
+                    {gallery.map((item, id) => {
+                        const { gatsbyImageData, description } = item;
+                        return (
+                            <div key={id}>
+                                <GatsbyImage
+                                    image={getImage(gatsbyImageData)}
+                                    alt={description}
+                                />
+                            </div>
+                        );
+                    })}
+                </section>
+                <section>
+                    <h4>Links to next previous project here</h4>
+                </section>
+                <section>
+                    <h2>Selected projects here</h2>
                 </section>
             </Layout>
         </>
