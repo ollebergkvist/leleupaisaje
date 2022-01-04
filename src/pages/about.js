@@ -6,39 +6,48 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 export const query = graphql`
     query AboutPageQuery {
-        contentfulAbout {
-            title
-            seoDescription {
-                seoDescription
-            }
-            content {
-                raw
-                # references {
-                #     ... on ContentfulAsset {
-                #         contentful_id
-                #         gatsbyImageData(
-                #             layout: FULL_WIDTH
-                #             placeholder: BLURRED
-                #         )
-                #     }
-                # }
+        allContentfulAbout {
+            nodes {
+                title
+                slug
+                seoDescription {
+                    seoDescription
+                }
+                content {
+                    raw
+                    # references {
+                    #     ... on ContentfulAsset {
+                    #         contentful_id
+                    #         gatsbyImageData(
+                    #             layout: FULL_WIDTH
+                    #             placeholder: BLURRED
+                    #         )
+                    #     }
+                    # }
+                }
+                lead
             }
         }
     }
 `;
 
 export default function AboutPage({ data }) {
-    const { title, seoDescription, content } = data.contentfulAbout;
+    const { title, slug, seoDescription, content, lead } =
+        data.allContentfulAbout.nodes[0];
 
     return (
         <>
-            <Seo title={title} description={seoDescription.seoDescription} />
+            <Seo
+                title={title}
+                description={seoDescription.seoDescription}
+                url={slug}
+            />
             <Layout>
                 <h1>{title}</h1>
+                <span>{lead}</span>
                 <section>
                     {documentToReactComponents(JSON.parse(content.raw))}
                 </section>
-                <section></section>
             </Layout>
         </>
     );

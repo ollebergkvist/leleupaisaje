@@ -42,6 +42,7 @@ export function Navbar() {
                     </ul>
                 </nav>
                 <SocialIcons />
+                <Language />
             </header>
         </div>
     );

@@ -62,7 +62,7 @@ module.exports = {
                 // language file path
                 defaultLanguage: `en`,
                 // option to redirect to `/ko` when connecting `/`
-                redirect: true,
+                redirect: false,
                 // option for use / as defaultLangauge root path. if your defaultLanguage is `ko`, when `redirectDefaultLanguageToRoot` is true, then it will not generate `/ko/xxx` pages, instead of `/xxx`
                 redirectDefaultLanguageToRoot: false,
                 // paths that you don't want to genereate locale pages, example: ["/dashboard/","/test/**"], string format is from micromatch https://github.com/micromatch/micromatch

@@ -1,7 +1,11 @@
 :root {
-  --black: #333;
-  --white: #fff;
-  --text-size-base: 18px;
-  --title-font-family: 'test';
-  --p-font-family: 'test';
+    --black: #333;
+    --white: #fff;
+    --text-size-base: 18px;
+    --title-font-family: 'test';
+    --p-font-family: 'test';
+}
+
+main {
+    min-height: 100vh;
 }
